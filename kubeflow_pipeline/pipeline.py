@@ -49,7 +49,7 @@ def mnist_pipeline():
 
     analysis = dsl.ContainerOp(
         name="analysis total",
-        image=kosehy/mnist-analysis:latest",
+        image="kosehy/mnist-analysis:latest",
         file_outputs={
             "confusion_matrix": "/confusion_matrix.csv",
             "mlpipeline-ui-metadata": "/mlpipeline-ui-metadata.json",
