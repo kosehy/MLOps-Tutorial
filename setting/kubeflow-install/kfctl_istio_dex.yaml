@@ -1,9 +1,6 @@
 apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
-  clusterName: kubernetes
-  creationTimestamp: null
-  name: kubeflow-install
   namespace: kubeflow
 spec:
   applications:
@@ -91,7 +88,3 @@ spec:
   - name: manifests
     uri: https://github.com/kubeflow/manifests/archive/v1.2.0.tar.gz
   version: v1.2-branch
-status:
-  reposCache:
-  - localPath: '"/data/MLOps-Tutorial/setting/kubeflow-install/.cache/manifests/manifests-1.2.0"'
-    name: manifests
