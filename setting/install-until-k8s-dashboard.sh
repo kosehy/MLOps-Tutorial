@@ -1,11 +1,3 @@
-# kubeadm init
-sudo kubeadm init --apiserver-advertise-address 192.168.35.10 --pod-network-cidr=192.168.0.0/24
-
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-export KUBECONFIG=$HOME/.kube/config
-
 # install calico
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 # taint node
