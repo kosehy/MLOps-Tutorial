@@ -1,4 +1,3 @@
-
 # install-kubernetes.sh
 
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
@@ -8,8 +7,8 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 sudo apt-get update
 
-# install kubelet kubeadm kubectl 1.19.15
-sudo apt-get install -y kubelet=1.19.15-00 kubeadm=1.19.15-00 kubectl=1.19.15-00
+# install kubelet kubeadm kubectl 1.19.16
+sudo apt-get install -y kubelet=1.19.16-00 kubeadm=1.19.16-00 kubectl=1.19.16-00
 # hold the .
 sudo apt-mark hold kubelet kubeadm kubectl
 # check kubernetes version
