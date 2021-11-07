@@ -17,7 +17,10 @@ kubelet --version
 kubectl version
 
 # kubeadm init
-sudo kubeadm init --apiserver-advertise-address 192.168.35.10 --pod-network-cidr=192.168.0.0/24
+kubeadm init --apiserver-advertise-address 192.168.35.10 --pod-network-cidr=192.168.0.0/24
+
+# sleep 300s
+sleep 60s
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config

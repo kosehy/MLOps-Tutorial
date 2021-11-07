@@ -31,11 +31,12 @@ kubectl apply -f https://openebs.github.io/charts/openebs-operator.yaml
 
 # install verification
 kubectl get pods -n openebs -l openebs.io/component-name=openebs-localpv-provisioner
+
 # sleep 1 minute
 sleep 90s
+
 # change default storage class as openebs-hostpath
 kubectl patch storageclass openebs-hostpath -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
 
 sudo apt install nfs-common -y &&
 
@@ -67,6 +68,7 @@ subjects:
   namespace: kubernetes-dashboard
 EOF
 kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/admin-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"
+
 # edit type as LoadBalancer
 KUBE_EDITOR=nano kubectl edit service -n kubernetes-dashboard kubernetes-dashboard
 sudo nano kubeconfig.config
