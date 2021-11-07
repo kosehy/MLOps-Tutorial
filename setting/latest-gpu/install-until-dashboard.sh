@@ -1,6 +1,3 @@
-# kubeadm init
-sudo kubeadm init --apiserver-advertise-address 192.168.1.77 --pod-network-cidr=192.168.0.0/24
-
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
