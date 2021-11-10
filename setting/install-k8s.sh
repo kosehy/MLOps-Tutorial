@@ -17,12 +17,12 @@ kubelet --version
 kubectl version
 
 # kubeadm init
-kubeadm init --apiserver-advertise-address 192.168.35.10 --pod-network-cidr=192.168.0.0/24
+sudo kubeadm init --apiserver-advertise-address 192.168.35.10 --pod-network-cidr=192.168.0.0/24
 
-# sleep 300s
-sleep 60s
+sleep 5s
 
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-export KUBECONFIG=$HOME/.kube/config
+sh copy-k8s-config.sh
+
+sleep 5s
+
+sh install-until-k8s-dashboard.sh
